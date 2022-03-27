@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="multiply.css">
+    <title>Multiplication</title>
+</head>
+<body>
+    <div class="container">
+        <input type="number" id="num" placeholder="Select A Number" autofocus>
+        <p id="display"></p>
+        <br>
+        <div class="buttons">
+            <button id="multiply">Multiply</button>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+    <script>
+        let result = document.getElementById("display");
+        
+        let multiply = document.getElementById("multiply");
+        multiply.addEventListener('click', () => {
+            let num1 = document.getElementById("num").value;
+            for(let i = 1; i <= 12; i++){
+                result.innerHTML += parseInt(num1) + " * " + i + " = " + parseInt(num1) * i + "<br>";
+                result.style.borderBottom = "2px solid #000";
+            }
+        })
+        // ------------------------------------------------------
+        let reset = document.getElementById("reset");
+        reset.addEventListener('click', () => {
+            let num = document.getElementById("num").value;
+            result.innerHTML= " ";
+            num = 0;
+        })
+    </script>
+</body>
+</html>
